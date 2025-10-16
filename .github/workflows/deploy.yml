@@ -33,6 +33,8 @@ jobs:
 
       - name: Build web app
         run: npm run build:web
+        env:
+          EXPO_PUBLIC_URL: /inter-timer
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
