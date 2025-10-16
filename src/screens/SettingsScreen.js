@@ -191,14 +191,15 @@ export default function SettingsScreen({ currentConfig, onSave, onBack }) {
 
   const settingsContent = (
     <>
-      <TouchableOpacity style={styles.backButton} onPress={onBack}>
-        {isDesktop ? <CloseIcon size={28} color="#333" /> : <BackArrowIcon size={28} color="#333" />}
-      </TouchableOpacity>
+      <View style={styles.header}>
+        <Text style={styles.title}>Timer Settings</Text>
+        <TouchableOpacity style={styles.closeButton} onPress={onBack}>
+          {isDesktop ? <CloseIcon size={28} color="#333" /> : <BackArrowIcon size={28} color="#333" />}
+        </TouchableOpacity>
+      </View>
 
       <View style={styles.content}>
         <ScrollView showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
-          <Text style={styles.title}>Timer Settings</Text>
-
           <View style={styles.section}>
             <Text style={styles.label}>Load Profile</Text>
             <View style={styles.pickerContainer}>
@@ -325,29 +326,32 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  backButton: {
-    position: "absolute",
-    top: 10,
-    left: 10,
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
+  },
+  closeButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
     backgroundColor: "transparent",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: 10,
   },
   content: {
     flex: 1,
     padding: 25,
-    paddingTop: 60,
+    paddingTop: 10,
   },
   title: {
     fontFamily: "BarlowCondensed-Bold",
     fontSize: 28,
     color: "#333",
-    textAlign: "center",
-    marginBottom: 20,
+    flex: 1,
   },
   section: {
     marginBottom: 20,

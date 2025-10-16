@@ -6,7 +6,7 @@ import { SettingsIcon } from "../../icons";
 export default function DesktopButtons({ onSettingsPress }) {
   return (
     <View style={styles.container}>
-      <Button variant="image" imageSource={require("../../../../assets/white-button.png")} onPress={() => Linking.openURL("https://buymeacoffee.com/stefanrogic")} style={styles.coffeeButton} />
+      {/* <Button variant="image" imageSource={require("../../../../assets/white-button.png")} onPress={() => Linking.openURL("https://buymeacoffee.com/stefanrogic")} style={styles.coffeeButton} /> */}
       <Button variant="icon" onPress={onSettingsPress} style={styles.settingsButton} size={50}>
         <SettingsIcon size={24} color="#333" />
       </Button>
